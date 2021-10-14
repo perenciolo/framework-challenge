@@ -10,7 +10,7 @@ const initialState = {
 } as PostsState;
 
 export const postsSlice = createSlice({
-  name: 'Posts',
+  name: 'posts',
   initialState,
   reducers: {
     removePost(/*state: PostsState, action: PayloadAction<Post>*/) {

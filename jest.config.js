@@ -42,6 +42,7 @@ module.exports = {
     '\\.(svg)$': '<rootDir>/config/mocks/fileMock.js',
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
   },
+  resetMocks: true,
   watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
   testResultsProcessor: 'jest-sonar-reporter',
   reporters: [
