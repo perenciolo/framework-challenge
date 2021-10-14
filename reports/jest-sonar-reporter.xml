@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+    <file path="/home/gustavolima/Projects/js/react/framework-challenge/src/features/posts/load-posts.spec.tsx">
+        <testCase name="LoadPosts should render loading when data is loading" duration="27"/>
+        <testCase name="LoadPosts should render properly" duration="14"/>
+        <testCase name="LoadPosts should handle pagination" duration="17"/>
+        <testCase name="LoadPosts should open modal with correct values when clicking in the post list item" duration="23"/>
+        <testCase name="LoadPosts should close modal when clicking on the button" duration="17"/>
+    </file>
+    <file path="/home/gustavolima/Projects/js/react/framework-challenge/src/libs/utils/chunk-array/chunk-array.spec.ts">
+        <testCase name="chunkArray should convert an array to chunks" duration="1"/>
+        <testCase name="chunkArray should not fail when array to chunk is undefined" duration="1"/>
+    </file>
+</testExecutions>

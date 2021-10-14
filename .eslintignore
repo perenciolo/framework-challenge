@@ -1,0 +1,6 @@
+*.s?css
+*.svg
+*.d.ts
+setupTests.ts
+node_modules
+src/tests/**/*

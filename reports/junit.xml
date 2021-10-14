@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="7" failures="0" errors="0" time="1.697">
+  <testsuite name="src/features/posts/load-posts.spec.tsx" errors="0" failures="0" skipped="0" timestamp="2021-10-14T00:11:26" time="1.053" tests="5">
+    <testcase classname="LoadPosts - should render loading when data is loading" name="LoadPosts - should render loading when data is loading" time="0.027">
+    </testcase>
+    <testcase classname="LoadPosts - should render properly" name="LoadPosts - should render properly" time="0.014">
+    </testcase>
+    <testcase classname="LoadPosts - should handle pagination" name="LoadPosts - should handle pagination" time="0.017">
+    </testcase>
+    <testcase classname="LoadPosts - should open modal with correct values when clicking in the post list item" name="LoadPosts - should open modal with correct values when clicking in the post list item" time="0.023">
+    </testcase>
+    <testcase classname="LoadPosts - should close modal when clicking on the button" name="LoadPosts - should close modal when clicking on the button" time="0.017">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/libs/utils/chunk-array/chunk-array.spec.ts" errors="0" failures="0" skipped="0" timestamp="2021-10-14T00:11:27" time="0.153" tests="2">
+    <testcase classname="chunkArray - should convert an array to chunks" name="chunkArray - should convert an array to chunks" time="0.001">
+    </testcase>
+    <testcase classname="chunkArray - should not fail when array to chunk is undefined" name="chunkArray - should not fail when array to chunk is undefined" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>

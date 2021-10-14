@@ -1,0 +1,62 @@
+module.exports = {
+  clearMocks: true,
+  roots: ['<rootDir>/src'],
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['<rootDir>/config/setupTests.ts'],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json'],
+  testRegex: '((\\.|/*.)(test|spec))\\.[tj]sx?$',
+  transform: {
+    '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+    '^.+\\.scss$': 'jest-scss-transform',
+    '^.+\\.css$': '<rootDir>/config/mocks/cssMock.js',
+  },
+  transformIgnorePatterns: [
+    '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$',
+    '^.+\\.module\\.(css|sass|scss)$',
+  ],
+  coverageDirectory: 'reports',
+  coverageReporters: ['cobertura', 'html', 'lcov', 'text-summary', 'text'],
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!src/index.tsx',
+    '!src/themes/**/*.{js,ts}',
+    '!src/index.dev.ts',
+    '!src/main.tsx',
+    '!src/App.tsx',
+    '!src/**/*.styles.ts',
+    '!src/config/**/*.{ts,js}',
+    '!src/**/*.stories.{js,jsx,ts,tsx}',
+    '!src/i18n/**/*.{js,ts}',
+    '!src/clients/**/*',
+    '!src/**/*.d.ts',
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 100,
+      lines: 100,
+      functions: 100,
+      statements: 100,
+    },
+  },
+  moduleNameMapper: {
+    '\\.(svg)$': '<rootDir>/config/mocks/fileMock.js',
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+  },
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  testResultsProcessor: 'jest-sonar-reporter',
+  reporters: [
+    'default',
+    [
+      'jest-junit',
+      {
+        suiteName: 'jest tests',
+        outputDirectory: './reports/',
+        outputName: 'junit.xml',
+        classNameTemplate: '{classname} - {title}',
+        titleTemplate: '{classname} - {title}',
+        ancestorSeparator: ' > ',
+        usePathForSuiteName: 'true',
+      },
+    ],
+  ],
+};

@@ -1,0 +1,89 @@
+@import '../../styles/variables';
+
+.albumsTitle {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: $v-primary;
+}
+
+.albumsBox {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.albumsItem {
+  padding: .5rem 0;
+}
+
+.albumsShowingBox {
+  display: flex;
+  align-items: center;
+  // border: 1px solid $v-grey;
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  background: rgba($v-primary, .1);
+}
+
+.albumsShowingTitle {
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: $v-grey-plus;
+
+  & > span {
+    font-weight: bold;
+    color: $v-primary;
+  }
+}
+
+
+
+.albumsQtdSelectorBox {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  width: 40%;
+}
+
+.albumsQtdSelectorLabel {
+  font-size: .625rem;
+  font-weight: bold;
+  color: $v-grey-plus;
+}
+
+.albumsQtdSelector {
+  background: $v-white;
+  border: 1px solid $v-primary;
+  border-radius: 1rem;
+  color: $v-primary;
+  padding-left: .5rem;
+  font-size: .625rem;
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: .5rem;
+
+  & select {
+    text-align: center;
+    color: $v-primary;
+  }
+}
+
+.albumsQtdSelector::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url('/src/assets/images/caret.svg') center no-repeat;
+  grid-area: select;
+  margin-right: .5rem;
+}

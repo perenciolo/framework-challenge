@@ -1,0 +1,106 @@
+@import '../../styles/variables';
+
+.todosTitle {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: $v-primary;
+}
+
+.todoBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todoTitle {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  flex: 1;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: flex-start;
+  padding: .5rem;
+}
+
+.todoCompleted {
+  text-decoration: line-through;
+}
+
+.todoCheckbox {
+  align-items: stretch;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: stretch;
+  width: 10%;
+}
+
+.todoCheckboxItem {
+  color: $v-grey;
+}
+
+.todoCheckboxCompleted {
+  color: $v-green;
+}
+
+.addTodoBox {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.addTodoFormControl {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.addTodoFormControl::before{
+  content:'';
+  background: $v-grey-plus;
+  height: 1px;
+  width: 80%;
+  border-radius: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.addTodoFormControl:focus-within:before{
+  content:'';
+  background: $v-primary;
+}
+
+.addTodoLabel {
+  font-size: .675rem;
+  margin-bottom: .25rem;
+  color: $v-grey-plus;
+}
+
+.addTodoFormControl:focus-within .addTodoLabel{
+  color: $v-primary;
+}
+
+.addTodoInput {
+  border: none;
+  color: $v-grey-plus;
+  font-size: .625rem;
+}
+
+.addTodoFormButton {
+  background: $v-white;
+  border-radius: 2rem;
+  border: 1px solid $v-primary;
+  color: $v-primary;
+  flex: 1;
+  margin-left: 0.5rem;
+  padding: .25rem;
+  cursor: pointer;
+}
