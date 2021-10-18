@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vite",
     "test": "yarn run jest",
+    "test:clearCache": "yarn test --clearCache",
     "test:watch": "yarn test --runInBand --watch",
     "test:watchAll": "yarn test --runInBand --watchAll --silent",
     "test:coverage": "yarn test --coverage",

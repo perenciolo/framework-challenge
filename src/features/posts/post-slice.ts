@@ -1,7 +1,8 @@
-import { createSlice /*, PayloadAction*/ } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { chunkArray } from '../../libs/utils/chunk-array';
 import { fetchPosts } from './fetch-posts';
-import { /*Post,*/ PostsState } from './types';
+import { Post, PostsState } from './types';
 
 const initialState = {
   list: {},
@@ -13,8 +14,20 @@ export const postsSlice = createSlice({
   name: 'posts',
   initialState,
   reducers: {
-    removePost(/*state: PostsState, action: PayloadAction<Post>*/) {
-      // state.list = state.list.filter((post) => post.id === action.payload.id);
+    removePost(
+      state: PostsState,
+      action: PayloadAction<{
+        id: Post['id'];
+      }>
+    ) {
+      const chunkSize = Object.values(state.list)[0].length;
+      const x = chunkArray(
+        Object.values(state.list)
+          .flat()
+          .filter((post) => Number(post.id) !== Number(action.payload.id)),
+        chunkSize
+      );
+      state.list = x;
     },
   },
   extraReducers: (builder) => {
@@ -29,9 +42,10 @@ export const postsSlice = createSlice({
     });
 
     builder.addCase(fetchPosts.rejected, (state, { payload }) => {
-      if (payload) {
-        state.error = payload.message;
-      }
+      state.error = {
+        message: payload?.message,
+        status: payload?.status,
+      };
       state.status = 'idle';
     });
   },

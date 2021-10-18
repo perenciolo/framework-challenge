@@ -10,11 +10,12 @@ export type Post = {
 };
 
 export type FetchPostsError = {
-  message: string;
+  status?: number;
+  message?: string;
 };
 
 export type PostsState = {
   status: 'loading' | 'idle';
-  error: string | null;
+  error: FetchPostsError | null;
   list: ChunkArrayResult<Post[]>;
 };

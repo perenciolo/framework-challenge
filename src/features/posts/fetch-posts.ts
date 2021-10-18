@@ -9,13 +9,14 @@ export const fetchPosts = createAsyncThunk<
   number | undefined,
   { rejectValue: FetchPostsError }
 >('posts/fetch', async (chunkSize = 5, thunkApi) => {
-  const response = await fetch(`${BASE_URL}/posts`);
-
-  if (response.status !== 200) {
+  try {
+    const response = await fetch(`${BASE_URL}/posts`);
+    const result = await response.json();
+    return chunkArray<Post>(result, chunkSize);
+  } catch (error) {
     return thunkApi.rejectWithValue({
-      message: 'Failed to fetch Posts.',
+      status: (error as Response)?.status || 500,
+      message: (await (error as Response).json())?.message || 'Failed to fetch Posts.',
     });
   }
-
-  return chunkArray<Post>(await response.json(), chunkSize);
 });

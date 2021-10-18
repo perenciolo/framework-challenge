@@ -20,10 +20,6 @@ function LoadPosts() {
     dispatch(fetchPosts(10));
   }, []);
 
-  useEffect(() => {
-    console.log(posts);
-  }, [posts]);
-
   function handlePaginate(page: number) {
     setCurrentPage(page);
   }
